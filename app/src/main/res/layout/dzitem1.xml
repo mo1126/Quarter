@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/x10">
+
+    <com.meg7.widget.CustomShapeImageView
+        android:id="@+id/duanzi_head"
+        android:layout_width="@dimen/x30"
+        android:layout_height="@dimen/y20"
+        android:layout_margin="@dimen/x5"
+         />
+
+    <TextView
+        android:id="@+id/duanzi_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/duanzi_head"
+        android:layout_toEndOf="@+id/duanzi_head"
+        android:layout_toRightOf="@+id/duanzi_head"
+        android:text="名字奥术大师大所大所多"
+        android:textColor="@color/colorRed"/>
+
+    <TextView
+        android:id="@+id/duanzi_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/duanzi_name"
+        android:layout_toEndOf="@+id/duanzi_head"
+        android:layout_toRightOf="@+id/duanzi_head"
+        android:text="时间奥术大师大所大所"
+        android:textSize="@dimen/x10"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/duanzi_time"
+        android:layout_marginTop="@dimen/y3"
+        android:text="酒对你干髻鲨菲达环保俩世界而封闭比USA固定并发阖家安康了不法规和4ab"
+        android:id="@+id/duanzi_content" />
+
+
+    <ImageView
+        android:id="@+id/duanzi_open"
+        android:layout_width="@dimen/x25"
+        android:layout_height="@dimen/x25"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/duanzi_name"
+        android:src="@mipmap/icon_open" />
+   <!-- <LinearLayout
+        android:layout_width="@dimen/x25"
+        android:layout_height="@dimen/x30"></LinearLayout>-->
+</RelativeLayout>
