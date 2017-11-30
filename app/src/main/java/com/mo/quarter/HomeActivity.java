@@ -93,6 +93,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeVie
         getSupportFragmentManager().beginTransaction().add(R.id.home_fl, tuijianFragment).show(tuijianFragment).commit();
         getSupportFragmentManager().beginTransaction().add(R.id.home_fl, duanziFragment).hide(duanziFragment) .commit();
         getSupportFragmentManager().beginTransaction().add(R.id.home_fl, shiPinFragment).hide(shiPinFragment).commit();
+
         getSupportFragmentManager().beginTransaction().replace(R.id.home_left, new LeftFragment()).commit();
 
     }
@@ -105,7 +106,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeVie
                 homeDraw.openDrawer(Gravity.LEFT);
                 break;
             case R.id.home_chuangzuo:
-
+                startActivity(new Intent(this,CreateActivity.class));
                 ShowToast("创作");
                 break;
             case R.id.home_tuijian:

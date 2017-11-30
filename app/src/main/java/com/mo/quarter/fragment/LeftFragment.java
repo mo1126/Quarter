@@ -54,17 +54,10 @@ public class LeftFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-
         inflate = View.inflate(getContext(), R.layout.left_fragment, null);
         unbinder = ButterKnife.bind(this, inflate);
         return inflate;
     }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getinfo(UserInfoBean u){
         info=u;

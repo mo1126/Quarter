@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout android:background="?android:attr/selectableItemBackground"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/x10">
+    android:padding="@dimen/x10"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.meg7.widget.CustomShapeImageView
         android:id="@+id/duanzi_head"
@@ -13,13 +15,15 @@
 
     <TextView
         android:id="@+id/duanzi_name"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/x100"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/duanzi_head"
         android:layout_toEndOf="@+id/duanzi_head"
         android:layout_toRightOf="@+id/duanzi_head"
         android:text="名字奥术大师大所大所多"
-        android:textColor="@color/colorRed"/>
+        android:textColor="@color/colorRed"
+        android:maxLines="1"
+        />
 
     <TextView
         android:id="@+id/duanzi_time"
@@ -50,7 +54,116 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/duanzi_name"
         android:src="@mipmap/icon_open" />
-   <!-- <LinearLayout
+    <ImageView
+        android:id="@+id/duanzi_shutdown"
         android:layout_width="@dimen/x25"
-        android:layout_height="@dimen/x30"></LinearLayout>-->
+        android:layout_height="@dimen/x25"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/duanzi_name"
+        android:src="@mipmap/icon_shutdown"
+        android:visibility="gone"/>
+
+     <LinearLayout
+         android:id="@+id/dzitem1_pinglun"
+         android:layout_width="@dimen/x25"
+         android:layout_height="@dimen/x35"
+         android:layout_alignParentEnd="true"
+         android:layout_alignParentRight="true"
+         android:layout_alignTop="@+id/duanzi_name"
+         android:orientation="vertical"
+         android:visibility="gone"
+         >
+         <com.meg7.widget.CustomShapeImageView
+             android:id="@+id/dzitem1_pinglun_iv"
+             android:layout_width="@dimen/x25"
+             android:layout_height="@dimen/x25"
+             android:src="@mipmap/pinglun"
+             android:padding="@dimen/x3"
+             app:shape="circle"
+              />
+         <TextView
+             android:id="@+id/dzitem1_pinglun_tv"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:text="111"
+             android:textSize="@dimen/x8"
+             android:gravity="center"
+             />
+     </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/dzitem1_fenxiang"
+        android:layout_width="@dimen/x25"
+        android:layout_height="@dimen/x35"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/duanzi_name"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <com.meg7.widget.CustomShapeImageView
+            android:id="@+id/dzitem1_fenxiang_iv"
+            android:layout_width="@dimen/x25"
+            android:layout_height="@dimen/x25"
+            android:src="@mipmap/fenxiang"
+            android:padding="@dimen/x3"
+            app:shape="circle"
+             />
+        <TextView
+            android:id="@+id/dzitem1_fenxiang_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="111"
+            android:textSize="@dimen/x8"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dzitem1_guanzhu"
+        android:layout_width="@dimen/x25"
+        android:layout_height="@dimen/x35"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/duanzi_name"
+        android:orientation="vertical"
+        android:visibility="gone"
+        >
+        <com.meg7.widget.CustomShapeImageView
+            android:id="@+id/dzitem1_guanzhu_iv"
+            android:layout_width="@dimen/x25"
+            android:layout_height="@dimen/x25"
+            android:layout_below="@+id/duanzi_shutdown"
+            android:layout_toEndOf="@+id/duanzi_shutdown"
+            android:layout_toRightOf="@+id/duanzi_shutdown"
+            android:padding="@dimen/x3"
+            android:src="@mipmap/guanzhu"
+            app:shape="circle" />
+        <TextView
+            android:id="@+id/dzitem1_guanzhu_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="111"
+            android:textSize="@dimen/x8"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/item_rc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/duanzi_content"
+        android:visibility="gone"
+         ></com.jcodecraeer.xrecyclerview.XRecyclerView>
+
+
+
 </RelativeLayout>

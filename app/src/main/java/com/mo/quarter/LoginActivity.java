@@ -61,6 +61,7 @@ public class LoginActivity extends BaseActivity {
             case R.id.login_other:
                 ShowToast("其他登录");
                 startActivity(new Intent(this,LoginOtherActivity.class));
+                finish();
                 break;
         }
     }

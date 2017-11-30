@@ -35,7 +35,7 @@ public class DuanziFragment extends Fragment implements DuanziView {
     private DuanziPresenter duanziPresenter;
     private List<JokesBean.DataBean> data;
     private DuanziAdapter myadapter;
-    private int page;
+    private int page=1;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class DuanziFragment extends Fragment implements DuanziView {
         duanziRv.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-                page=0;
+                page=1;
                 data.clear();
                 duanziPresenter.getJokes(String.valueOf(page));
                 duanziRv.refreshComplete();

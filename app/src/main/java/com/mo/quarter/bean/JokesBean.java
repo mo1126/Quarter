@@ -11,7 +11,7 @@ public class JokesBean {
     /**
      * msg : 获取段子列表成功
      * code : 0
-     * data : [{"commentNum":null,"content":"今天办公室网络忽然连不上了，老总在和一男同事研究设置IP的事。男同事走到人事大姐电脑前设置了半天，老总等急了大声吼：你设了没有？男同事答：快了，快了。\n","createTime":"2017-11-28T14:03:56","jid":53,"praiseNum":null,"shareNum":null,"uid":551,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:51","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/551.jpg","latitude":null,"longitude":null,"mobile":"15988888888","money":0,"nickname":"_zhang","password":"111111","praiseNum":null,"token":"AD7D76CB63F7A5E17C64A14A4FE588D1","uid":551,"userId":null,"username":"15988888888"}},{"commentNum":null,"content":"是否更舒服","createTime":"2017-11-28T14:00:55","jid":52,"praiseNum":null,"shareNum":null,"uid":551,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:51","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/551.jpg","latitude":null,"longitude":null,"mobile":"15988888888","money":0,"nickname":"_zhang","password":"111111","praiseNum":null,"token":"AD7D76CB63F7A5E17C64A14A4FE588D1","uid":551,"userId":null,"username":"15988888888"}},{"commentNum":null,"content":"阿萨德发的发的说法的打发","createTime":"2017-11-28T14:00:13","jid":51,"praiseNum":null,"shareNum":null,"uid":551,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:51","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/551.jpg","latitude":null,"longitude":null,"mobile":"15988888888","money":0,"nickname":"_zhang","password":"111111","praiseNum":null,"token":"AD7D76CB63F7A5E17C64A14A4FE588D1","uid":551,"userId":null,"username":"15988888888"}},{"commentNum":null,"content":"nihao","createTime":"2017-11-28T13:59:18","jid":50,"praiseNum":null,"shareNum":null,"uid":188,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T13:57:44","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/188.jpg","latitude":null,"longitude":null,"mobile":"18201205512","money":0,"nickname":"李方印","password":"123456","praiseNum":null,"token":"1CF78CD99420BCC297A5673C248769BD","uid":188,"userId":null,"username":"18201205512"}},{"commentNum":null,"content":"广发华福共和国发的发过的","createTime":"2017-11-28T13:38:48","jid":49,"praiseNum":null,"shareNum":null,"uid":170,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:56","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/170.jpg","latitude":null,"longitude":null,"mobile":"15297526557","money":0,"nickname":"wonderful","password":"123456","praiseNum":null,"token":"D9C75CAADF0EE4C106A4C4D9B4DE1B19","uid":170,"userId":null,"username":"15297526557"}},{"commentNum":null,"content":"广发华福共和国发的发过的","createTime":"2017-11-28T13:23:14","jid":48,"praiseNum":null,"shareNum":null,"uid":551,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:51","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/551.jpg","latitude":null,"longitude":null,"mobile":"15988888888","money":0,"nickname":"_zhang","password":"111111","praiseNum":null,"token":"AD7D76CB63F7A5E17C64A14A4FE588D1","uid":551,"userId":null,"username":"15988888888"}},{"commentNum":null,"content":"借花献佛存储过程","createTime":"2017-11-28T13:16:31","jid":47,"praiseNum":null,"shareNum":null,"uid":551,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:51","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/551.jpg","latitude":null,"longitude":null,"mobile":"15988888888","money":0,"nickname":"_zhang","password":"111111","praiseNum":null,"token":"AD7D76CB63F7A5E17C64A14A4FE588D1","uid":551,"userId":null,"username":"15988888888"}},{"commentNum":null,"content":"借花献佛存储过程","createTime":"2017-11-28T13:15:08","jid":46,"praiseNum":null,"shareNum":null,"uid":551,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:51","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/551.jpg","latitude":null,"longitude":null,"mobile":"15988888888","money":0,"nickname":"_zhang","password":"111111","praiseNum":null,"token":"AD7D76CB63F7A5E17C64A14A4FE588D1","uid":551,"userId":null,"username":"15988888888"}},{"commentNum":null,"content":"孤鸿寡鹄付过过过过或或过过或过或","createTime":"2017-11-28T13:10:10","jid":45,"praiseNum":null,"shareNum":null,"uid":551,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:51","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/551.jpg","latitude":null,"longitude":null,"mobile":"15988888888","money":0,"nickname":"_zhang","password":"111111","praiseNum":null,"token":"AD7D76CB63F7A5E17C64A14A4FE588D1","uid":551,"userId":null,"username":"15988888888"}},{"commentNum":null,"content":"孤鸿寡鹄付过过过过或或过过或过或","createTime":"2017-11-28T13:09:46","jid":44,"praiseNum":null,"shareNum":null,"uid":551,"user":{"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:51","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/551.jpg","latitude":null,"longitude":null,"mobile":"15988888888","money":0,"nickname":"_zhang","password":"111111","praiseNum":null,"token":"AD7D76CB63F7A5E17C64A14A4FE588D1","uid":551,"userId":null,"username":"15988888888"}}]
+     * data : [{"commentNum":null,"content":"电饭锅很健康","createTime":"2017-11-30T09:14:17","imgUrls":null,"jid":279,"praiseNum":null,"shareNum":null,"uid":142,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/142.jpg","nickname":"fghg","praiseNum":"null"}},{"commentNum":null,"content":"张鹤岗","createTime":"2017-11-30T08:57:40","imgUrls":"https://www.zhaoapi.cn/images/quarter/151196967322720171129233416.jpg|https://www.zhaoapi.cn/images/quarter/151197023083620171129234333.jpg|https://www.zhaoapi.cn/images/quarter/1512002490602ic_default_share.png|https://www.zhaoapi.cn/images/quarter/1512003459383gp1809635322017-11-13.png|https://www.zhaoapi.cn/images/quarter/1512003460008SHOUTAO_2017-11-03_10-38-27.jpg","jid":278,"praiseNum":null,"shareNum":null,"uid":188,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/188.jpg","nickname":"我是张鹤岗","praiseNum":"null"}},{"commentNum":null,"content":"张鹤岗","createTime":"2017-11-30T08:57:39","imgUrls":"https://www.zhaoapi.cn/images/quarter/151196967322720171129233416.jpg|https://www.zhaoapi.cn/images/quarter/151197023083620171129234333.jpg|https://www.zhaoapi.cn/images/quarter/1512002490602ic_default_share.png|https://www.zhaoapi.cn/images/quarter/1512003459383gp1809635322017-11-13.png","jid":277,"praiseNum":null,"shareNum":null,"uid":188,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/188.jpg","nickname":"我是张鹤岗","praiseNum":"null"}},{"commentNum":null,"content":"班上新来一位学生，名字叫\u201c马騳骉\u201d。开学点名了，班主任不知怎么念，就说：马叉叉到了没?语文老师有点文学素养，点名道：万马奔腾到了没?体育老师则直截了当叫：一群马到了没?历史老师对这个名字很不感冒：五马分尸到了没。数学老师更直接：马6到了没?美术老师最形象：徐悲鸿到了没?最后，还是教务处主任统一了叫法：马俩仨。万能的段友们，谁能告诉我他叫什么名字?","createTime":"2017-11-30T08:57:25","imgUrls":"https://www.zhaoapi.cn/images/quarter/151196967322720171129233416.jpg|https://www.zhaoapi.cn/images/quarter/151197023083620171129234333.jpg|https://www.zhaoapi.cn/images/quarter/1512002490602ic_default_share.png","jid":276,"praiseNum":null,"shareNum":null,"uid":98,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/98.jpg","nickname":"Mo","praiseNum":"null"}},{"commentNum":null,"content":"666","createTime":"2017-11-30T08:41:30","imgUrls":"https://www.zhaoapi.cn/images/quarter/151196967322720171129233416.jpg|https://www.zhaoapi.cn/images/quarter/151197023083620171129234333.jpg|https://www.zhaoapi.cn/images/quarter/1512002490602ic_default_share.png","jid":275,"praiseNum":null,"shareNum":null,"uid":188,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/188.jpg","nickname":"我是张鹤岗","praiseNum":"null"}},{"commentNum":null,"content":"dd","createTime":"2017-11-30T08:32:14","imgUrls":null,"jid":274,"praiseNum":null,"shareNum":null,"uid":148,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/148.jpg","nickname":"lcc","praiseNum":"null"}},{"commentNum":null,"content":"dd","createTime":"2017-11-30T08:32:14","imgUrls":null,"jid":273,"praiseNum":null,"shareNum":null,"uid":148,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/148.jpg","nickname":"lcc","praiseNum":"null"}},{"commentNum":null,"content":"aaa","createTime":"2017-11-30T08:29:45","imgUrls":null,"jid":272,"praiseNum":null,"shareNum":null,"uid":148,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/148.jpg","nickname":"lcc","praiseNum":"null"}},{"commentNum":null,"content":"aaa","createTime":"2017-11-30T08:29:45","imgUrls":null,"jid":271,"praiseNum":null,"shareNum":null,"uid":148,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/148.jpg","nickname":"lcc","praiseNum":"null"}},{"commentNum":null,"content":"初听不知曲中意，再听已是曲中人。曲中思念今犹在，不见当年梦中人。","createTime":"2017-11-30T08:28:39","imgUrls":"https://www.zhaoapi.cn/images/quarter/151196967322720171129233416.jpg|https://www.zhaoapi.cn/images/quarter/151197023083620171129234333.jpg","jid":270,"praiseNum":null,"shareNum":null,"uid":92,"user":{"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/92.jpg","nickname":"金鳞","praiseNum":"null"}}]
      */
 
     public String msg;
@@ -21,19 +21,20 @@ public class JokesBean {
     public static class DataBean {
         /**
          * commentNum : null
-         * content : 今天办公室网络忽然连不上了，老总在和一男同事研究设置IP的事。男同事走到人事大姐电脑前设置了半天，老总等急了大声吼：你设了没有？男同事答：快了，快了。
-
-         * createTime : 2017-11-28T14:03:56
-         * jid : 53
+         * content : 电饭锅很健康
+         * createTime : 2017-11-30T09:14:17
+         * imgUrls : null
+         * jid : 279
          * praiseNum : null
          * shareNum : null
-         * uid : 551
-         * user : {"age":null,"appkey":null,"appsecret":null,"createtime":"2017-11-28T14:03:51","email":null,"fans":null,"follow":null,"gender":0,"icon":"https://www.zhaoapi.cn/images/551.jpg","latitude":null,"longitude":null,"mobile":"15988888888","money":0,"nickname":"_zhang","password":"111111","praiseNum":null,"token":"AD7D76CB63F7A5E17C64A14A4FE588D1","uid":551,"userId":null,"username":"15988888888"}
+         * uid : 142
+         * user : {"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/142.jpg","nickname":"fghg","praiseNum":"null"}
          */
 
         public Object commentNum;
         public String content;
         public String createTime;
+        public String imgUrls;
         public int jid;
         public Object praiseNum;
         public Object shareNum;
@@ -43,47 +44,19 @@ public class JokesBean {
         public static class UserBean {
             /**
              * age : null
-             * appkey : null
-             * appsecret : null
-             * createtime : 2017-11-28T14:03:51
-             * email : null
              * fans : null
              * follow : null
-             * gender : 0
-             * icon : https://www.zhaoapi.cn/images/551.jpg
-             * latitude : null
-             * longitude : null
-             * mobile : 15988888888
-             * money : 0
-             * nickname : _zhang
-             * password : 111111
+             * icon : https://www.zhaoapi.cn/images/142.jpg
+             * nickname : fghg
              * praiseNum : null
-             * token : AD7D76CB63F7A5E17C64A14A4FE588D1
-             * uid : 551
-             * userId : null
-             * username : 15988888888
              */
 
             public Object age;
-            public Object appkey;
-            public Object appsecret;
-            public String createtime;
-            public Object email;
-            public Object fans;
-            public Object follow;
-            public int gender;
+            public String fans;
+            public String follow;
             public String icon;
-            public Object latitude;
-            public Object longitude;
-            public String mobile;
-            public int money;
             public String nickname;
-            public String password;
-            public Object praiseNum;
-            public String token;
-            public int uid;
-            public Object userId;
-            public String username;
+            public String praiseNum;
         }
     }
 }

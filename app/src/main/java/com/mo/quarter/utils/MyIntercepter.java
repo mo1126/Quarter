@@ -9,10 +9,12 @@ import android.content.pm.PackageManager;
 import com.mo.quarter.myapp.MyApp;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.ThreadPoolExecutor;
 
 import okhttp3.FormBody;
 import okhttp3.Interceptor;
+import okhttp3.MultipartBody;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
@@ -26,7 +28,7 @@ public class MyIntercepter implements Interceptor {
     private int versionCode;
     public static String token;
     private Context context;
-    private static int uid;
+    public  static int uid;
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -57,6 +59,21 @@ public class MyIntercepter implements Interceptor {
                         .add("token",token)
                         .build();
                request= request.newBuilder().post(body).build();
+            }else if(request.body() instanceof MultipartBody){
+
+
+                MultipartBody.Builder builder = new MultipartBody.Builder();
+                builder.setType(MultipartBody.FORM)
+                        .addFormDataPart("source","android")
+                        .addFormDataPart("appVersion", String.valueOf(versionCode))
+                        .addFormDataPart("token",token);
+
+                MultipartBody body = (MultipartBody) request.body();
+                List<MultipartBody.Part> parts = body.parts();
+                for (MultipartBody.Part part : parts) {
+                    builder.addPart(part);
+                }
+                request= request.newBuilder().post(builder.build()).build();
             }
         }
 

@@ -70,12 +70,14 @@ public class LoginOtherActivity extends BaseActivity<LoginOtherPresenter> implem
             case R.id.other_wangji:
                 ShowToast("忘记密码");
                 startActivity(new Intent(this, WangjiPwdActivity.class));
+
                 break;
             case R.id.other_youke:
                 ShowToast("游客登录");
                 Intent intent = new Intent(this, HomeActivity.class);
                 intent.putExtra("isYouke",true);
                 startActivity(intent);
+                finish();
                 break;
         }
     }
