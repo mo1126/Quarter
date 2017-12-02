@@ -132,6 +132,7 @@ public class DuanziActivity extends BaseActivity<CreateDuanziPresenter> implemen
     @Override
     public void shareSuccess(CreatDuanziBean creatDuanziBean) {
         ShowToast(creatDuanziBean.msg);
+        startActivity(new Intent(this,ShareSuccActivity.class));
         finish();
     }
 

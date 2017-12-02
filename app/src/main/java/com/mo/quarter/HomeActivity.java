@@ -140,7 +140,7 @@ public class HomeActivity extends BaseActivity<HomePresenter> implements HomeVie
                 getSupportFragmentManager().beginTransaction().hide(tuijianFragment).commit();
                 getSupportFragmentManager().beginTransaction().hide(duanziFragment) .commit();
                 getSupportFragmentManager().beginTransaction().show(shiPinFragment).commit();
-                homeTitle.setText("段子");
+                homeTitle.setText("视频");
                 homeTuijianImg.setImageResource(R.mipmap.raw_1500083878);
                 homeTuijianText.setTextColor(getResources().getColor(R.color.colorHui));
                 homeDuanziImg.setImageResource(R.mipmap.raw_1500085327);

@@ -25,8 +25,8 @@ public class HomePresenter extends BasePresenter<HomeView> implements HomeModel.
 
     public void getUserInfo(){
         SharedPreferences token = context.getSharedPreferences("token", Context.MODE_PRIVATE);
-        int uid = token.getInt("uid", 0);
-        model.getUserInfo(String.valueOf(uid));
+        String uid = token.getString("uid","");
+        model.getUserInfo(uid);
     }
     @Override
     public void getinfoSuccess(UserInfoBean userInfoBean) {

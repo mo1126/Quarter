@@ -32,7 +32,7 @@ public class LoginOtherModel {
                   String code = loginOtherBean.code;
                   if("0".equals(code)){
                       loginOtherInterface.LoginSuccess(loginOtherBean);
-                  }else{
+                  } else{
                       loginOtherInterface.LoginFailure(loginOtherBean.msg);
                   }
               }

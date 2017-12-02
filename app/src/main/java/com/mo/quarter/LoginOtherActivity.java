@@ -90,7 +90,7 @@ public class LoginOtherActivity extends BaseActivity<LoginOtherPresenter> implem
         SharedPreferences token = getSharedPreferences("token", MODE_PRIVATE);
         SharedPreferences.Editor edit = token.edit();
         edit.putString("token",loginOtherBean.data.token);
-        edit.putInt("uid",loginOtherBean.data.uid);
+        edit.putString("uid", String.valueOf(loginOtherBean.data.uid));
         edit.commit();
         startActivity(new Intent(this, HomeActivity.class));
         System.out.println(loginOtherBean.data.token);

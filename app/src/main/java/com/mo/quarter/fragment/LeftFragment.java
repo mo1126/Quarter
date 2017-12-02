@@ -16,6 +16,7 @@ import com.bumptech.glide.Glide;
 import com.meg7.widget.CustomShapeImageView;
 import com.mo.quarter.LoginActivity;
 import com.mo.quarter.R;
+import com.mo.quarter.ShezhiActivity;
 import com.mo.quarter.bean.UserInfoBean;
 
 import org.greenrobot.eventbus.EventBus;
@@ -114,6 +115,7 @@ public class LeftFragment extends Fragment {
                 break;
             case R.id.left_shezhi:
                 Showtoast("设置Activity");
+                startActivity(new Intent(getContext(), ShezhiActivity.class));
                 break;
         }
     }

@@ -28,7 +28,7 @@ public class MyIntercepter implements Interceptor {
     private int versionCode;
     public static String token;
     private Context context;
-    public  static int uid;
+    public  static String uid;
 
     @Override
     public Response intercept(Chain chain) throws IOException {
@@ -43,7 +43,7 @@ public class MyIntercepter implements Interceptor {
         }
         SharedPreferences token1 = context.getSharedPreferences("token", Context.MODE_PRIVATE);
         token = token1.getString("token", "");
-        uid = token1.getInt("uid", 0);
+        uid = token1.getString("uid", null);
 
 
         if(request.method().equals("POST")){

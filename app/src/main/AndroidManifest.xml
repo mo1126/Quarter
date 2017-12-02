@@ -8,9 +8,20 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_LOGS" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!--用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!--用于写入缓存数据到扩展存储卡-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS"/>
+    <!--用于申请获取蓝牙信息进行室内定位-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <application
         android:name=".myapp.MyApp"
@@ -27,7 +38,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <service android:name="com.amap.api.location.APSService"></service>
         <service
             android:name=".utils.DemoPushService"
             android:exported="true"
@@ -43,13 +54,16 @@
         <meta-data
             android:name="UMENG_CHANNEL"
             android:value="Channel ID" />
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="67b2ce639633ccb86ede6f17b8a76e46"/>//开发者申请的key
 
         <activity android:name=".LoginOtherActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".WangjiPwdActivity" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".CreateActivity" />
-        <activity android:name=".DuanziActivity"></activity>
+        <activity android:name=".DuanziActivity" />
+        <activity android:name=".ShareSuccActivity" />
+        <activity android:name=".ShezhiActivity"></activity>
     </application>
 
 </manifest>
