@@ -1,8 +1,10 @@
 package com.mo.quarter.utils;
 
 import com.mo.quarter.bean.CreatDuanziBean;
+import com.mo.quarter.bean.GetVideosBean;
 import com.mo.quarter.bean.JokesBean;
 import com.mo.quarter.bean.LoginOtherBean;
+import com.mo.quarter.bean.TuijianAdBean;
 import com.mo.quarter.bean.UserInfoBean;
 
 import java.util.List;
@@ -38,4 +40,11 @@ public interface ApiService {
     @POST("quarter/publishJoke")
     @Multipart
     Observable<CreatDuanziBean> shareDuanzi(@Part()List<MultipartBody.Part> file);
+
+    @POST("quarter/getAd")
+    Observable<TuijianAdBean> getAd();
+
+    @POST("quarter/getVideos")
+    @FormUrlEncoded
+    Observable<GetVideosBean> getvideos(@Field("uid") String uid,@Field("type") String type,@Field("page") String page);
 }

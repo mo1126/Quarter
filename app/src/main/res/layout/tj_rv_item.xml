@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="@dimen/x10">
+
+    <RelativeLayout
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y150"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tuijian_content"
+        />
+    <com.meg7.widget.CustomShapeImageView
+        android:id="@+id/tuijian_head"
+        android:layout_width="@dimen/x30"
+        android:layout_height="@dimen/y20"
+        android:layout_margin="@dimen/x5"
+        />
+
+    <TextView
+        android:id="@+id/tuijian_name"
+        android:layout_width="@dimen/x100"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tuijian_head"
+        android:layout_toEndOf="@+id/tuijian_head"
+        android:layout_toRightOf="@+id/tuijian_head"
+        android:text="名字奥术大师大所大所多"
+        android:textColor="@color/colorRed"
+        android:maxLines="1"
+        />
+
+    <TextView
+        android:id="@+id/tuijian_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+        android:layout_alignLeft="@+id/tuijian_name"
+        android:layout_alignStart="@+id/tuijian_name"
+        android:layout_below="@+id/tuijian_name"
+        android:text="时间奥术大师大所大所"
+        android:textSize="@dimen/x10" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tuijian_time"
+        android:layout_marginTop="@dimen/y3"
+        android:text="酒对你干髻鲨菲达环保俩世界而封闭比USA固定并发阖家安康了不法规和4ab"
+        android:id="@+id/tuijian_content" />
+
+
+</RelativeLayout>

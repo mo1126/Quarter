@@ -22,7 +22,6 @@
     <!--用于申请获取蓝牙信息进行室内定位-->
     <uses-permission android:name="android.permission.BLUETOOTH"/>
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-
     <application
         android:name=".myapp.MyApp"
         android:allowBackup="true"
@@ -59,7 +58,8 @@
         <activity android:name=".LoginOtherActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".WangjiPwdActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity" android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"/>
         <activity android:name=".CreateActivity" />
         <activity android:name=".DuanziActivity" />
         <activity android:name=".ShareSuccActivity" />

@@ -4,13 +4,28 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.mo.quarter.R;
+import com.mo.quarter.adapter.TuijianAdapter;
+import com.mo.quarter.bean.GetVideosBean;
+import com.mo.quarter.bean.TuijianAdBean;
+import com.mo.quarter.myapp.MyApp;
+import com.mo.quarter.presenter.TuijianPresenter;
+import com.mo.quarter.utils.MyIntercepter;
 import com.mo.quarter.utils.TablayoutUtils;
+import com.mo.quarter.view.TuijianView;
+import com.stx.xhb.xbanner.XBanner;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,15 +35,18 @@ import butterknife.Unbinder;
  * Created by 莫迎华 on 2017/11/27.15:30.
  */
 
-public class TuijianFragment extends Fragment {
+public class TuijianFragment extends Fragment implements TuijianView {
 
     @BindView(R.id.tuijian_tab)
     TabLayout tuijianTab;
-    @BindView(R.id.tuijian_fl)
-    FrameLayout tuijianFl;
+
     Unbinder unbinder;
-    private TjRemenFragment tjRemenFragment;
-    private TjGuanzhuFragment tjGuanzhuFragment;
+    @BindView(R.id.tuijian_rv)
+    XRecyclerView tuijianRv;
+    private XBanner xbanner;
+    private TuijianPresenter presenter;
+    private int page;
+    private View view;
 
     @Nullable
     @Override
@@ -41,42 +59,97 @@ public class TuijianFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        tuijianTab.addTab(tuijianTab.newTab().setText("热门").setTag(1));
-        tuijianTab.addTab(tuijianTab.newTab().setText("关注").setTag(2));
-        TablayoutUtils.setIndicator(tuijianTab,40,40);
-        tjRemenFragment = new TjRemenFragment();
-        tjGuanzhuFragment = new TjGuanzhuFragment();
-        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.tuijian_fl, tjRemenFragment).show(tjRemenFragment).commit();
-        getActivity().getSupportFragmentManager().beginTransaction().add(R.id.tuijian_fl, tjGuanzhuFragment).hide(tjGuanzhuFragment).commit();
+        initView();
         tuijianTab.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 int tag = (int) tab.getTag();
-                if(tag==1){
-                    getActivity().getSupportFragmentManager().beginTransaction().show(tjRemenFragment).commit();
-                    getActivity().getSupportFragmentManager().beginTransaction().hide(tjGuanzhuFragment).commit();
-                }else{
-                    getActivity().getSupportFragmentManager().beginTransaction().hide(tjRemenFragment).commit();
-                    getActivity().getSupportFragmentManager().beginTransaction() .show(tjGuanzhuFragment).commit();
+                if (tag == 1) {
+
+                } else {
+
                 }
             }
-
             @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
+            public void onTabUnselected(TabLayout.Tab tab) {  }
             @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
+            public void onTabReselected(TabLayout.Tab tab) { }
         });
+    }
+    private void initView() {
+        tuijianTab.addTab(tuijianTab.newTab().setText("热门").setTag(1));
+        tuijianTab.addTab(tuijianTab.newTab().setText("关注").setTag(2));
+        TablayoutUtils.setIndicator(tuijianTab, 40, 40);
 
+        view = View.inflate(getActivity(), R.layout.xbanner, null);
+        xbanner = view.findViewById(R.id.xbanner);
+        tuijianRv.addHeaderView(view);
+        LinearLayoutManager lm=new LinearLayoutManager(getContext());
+        tuijianRv.setLayoutManager(lm);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        presenter = new TuijianPresenter(this, getContext());
+
+        presenter.getVideos(MyIntercepter.uid,"1", String.valueOf(page));
+        presenter.getAd();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        xbanner.stopAutoPlay();
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+
+    }
+
+    @Override
+    public void getAdSuccess( TuijianAdBean tuijianAdBean) {
+        final List<String> imgs=new ArrayList<>();
+        List<TuijianAdBean.DataBean> data = tuijianAdBean.data;
+        for (TuijianAdBean.DataBean datum : data) {
+            imgs.add(datum.icon);
+        }
+        xbanner.setData(imgs,null);
+        xbanner.setmAdapter(new XBanner.XBannerAdapter() {
+            @Override
+            public void loadBanner(XBanner banner, Object model, View view, int position) {
+                Glide.with(getActivity()).load(imgs.get(position)).into((ImageView) view);
+            }
+        });
+
+
+    }
+
+    @Override
+    public void getAdFailure(String msg) {
+        Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT);
+    }
+
+    @Override
+    public void getVideosSuccess(GetVideosBean getVideosBean) {
+        List<GetVideosBean.DataBean> data = getVideosBean.data;
+        TuijianAdapter myadapter=new TuijianAdapter(getActivity(),data);
+        tuijianRv.setAdapter(myadapter);
+
+
+    }
+
+    @Override
+    public void getVideosFailure(String msg) {
+        Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT);
+    }
+
+    @Override
+    public void Error(String msg) {
+        Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT);
     }
 }

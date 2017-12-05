@@ -13,11 +13,10 @@
         app:tabTextColor="@color/colorHui"
         app:tabIndicatorHeight="@dimen/y3"
         >
-
     </android.support.design.widget.TabLayout>
-    <FrameLayout
-        android:id="@+id/tuijian_fl"
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/tuijian_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tuijian_tab"></FrameLayout>
+        android:layout_below="@+id/tuijian_tab"></com.jcodecraeer.xrecyclerview.XRecyclerView>
 </RelativeLayout>
