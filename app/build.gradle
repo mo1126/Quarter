@@ -67,4 +67,5 @@ dependencies {
     compile 'com.dou361.ijkplayer-x86_64:jjdxm-ijkplayer-x86_64:1.0.0'
 
 
+    compile 'cjt.library.wheel:camera:1.1.9'
 }

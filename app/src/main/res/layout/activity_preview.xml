@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mo.quarter.PreviewActivity">
+
+    <include
+        layout="@layout/simple_player_view_player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/preview_next"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y25">
+
+        <ImageView
+            android:layout_width="@dimen/x25"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView3"
+            android:src="@mipmap/back"
+            android:layout_marginTop="@dimen/y8"
+            android:layout_marginBottom="@dimen/y8"
+           />
+        <TextView
+            android:id="@+id/preview_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageView3"
+            android:layout_toRightOf="@+id/imageView3"
+            android:gravity="center"
+            android:text="返回"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="预览"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/preview_cun"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="存到本地"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/preview_next"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y30"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:text="下一步"
+        android:background="@color/colorBlue"
+        android:textColor="@color/white"/>
+
+
+</RelativeLayout>

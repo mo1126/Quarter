@@ -60,14 +60,11 @@ public class MyIntercepter implements Interceptor {
                         .build();
                request= request.newBuilder().post(body).build();
             }else if(request.body() instanceof MultipartBody){
-
-
                 MultipartBody.Builder builder = new MultipartBody.Builder();
                 builder.setType(MultipartBody.FORM)
                         .addFormDataPart("source","android")
                         .addFormDataPart("appVersion", String.valueOf(versionCode))
                         .addFormDataPart("token",token);
-
                 MultipartBody body = (MultipartBody) request.body();
                 List<MultipartBody.Part> parts = body.parts();
                 for (MultipartBody.Part part : parts) {
@@ -75,8 +72,9 @@ public class MyIntercepter implements Interceptor {
                 }
                 request= request.newBuilder().post(builder.build()).build();
             }
+        }else{
+            request= request.newBuilder().url(request.url() + "&source=android&appVersion=" + String.valueOf(versionCode) + "&token=" + token).build();
         }
-
         Response proceed = chain.proceed(request);
         return proceed;
     }

@@ -30,7 +30,6 @@ public class TuijianPresenter extends BasePresenter<TuijianView> implements Tuij
     public void getVideos(String uid,String type,String page){
         model.getVideos(uid,type,page);
     }
-
     @Override
     public void getAdSuccess(TuijianAdBean tuijianAdBean) {
         mview.getAdSuccess(tuijianAdBean);

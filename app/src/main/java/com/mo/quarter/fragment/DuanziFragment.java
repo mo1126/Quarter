@@ -33,7 +33,6 @@ public class DuanziFragment extends Fragment implements DuanziView {
     XRecyclerView duanziRv;
     Unbinder unbinder;
     private DuanziPresenter duanziPresenter;
-    private List<JokesBean.DataBean> data;
     private DuanziAdapter myadapter;
     private int page=1;
     @Nullable
@@ -49,23 +48,19 @@ public class DuanziFragment extends Fragment implements DuanziView {
         super.onActivityCreated(savedInstanceState);
         LinearLayoutManager lm=new LinearLayoutManager(getContext());
         duanziRv.setLayoutManager(lm);
-        data=new ArrayList<>();
         duanziRv.setLoadingMoreEnabled(true);
         duanziRv.setPullRefreshEnabled(true);
         duanziRv.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
                 page=1;
-                data.clear();
                 duanziPresenter.getJokes(String.valueOf(page));
-                duanziRv.refreshComplete();
             }
             @Override
             public void onLoadMore() {
                 page++;
                 System.out.println("page"+page);
                 duanziPresenter.getJokes(String.valueOf(page));
-                duanziRv.loadMoreComplete();
             }
         });
     }
@@ -86,12 +81,18 @@ public class DuanziFragment extends Fragment implements DuanziView {
     @Override
     public void getJokesSuccess(JokesBean jokesBean) {
         Toast.makeText(getContext(), jokesBean.msg, Toast.LENGTH_SHORT).show();
-        data.addAll( jokesBean.data);
         if(myadapter==null){
-            myadapter = new DuanziAdapter(data,getContext());
+            myadapter = new DuanziAdapter(jokesBean.data,getContext());
             duanziRv.setAdapter(myadapter);
         }else{
-            myadapter.notifyDataSetChanged();
+            if(page==1){
+                myadapter.refresh(jokesBean.data);
+                duanziRv.refreshComplete();
+            }else{
+                myadapter.loadmore(jokesBean.data);
+                duanziRv.loadMoreComplete();
+            }
+
         }
     }
 
@@ -104,6 +105,6 @@ public class DuanziFragment extends Fragment implements DuanziView {
     @Override
     public void getError(String msg) {
         System.out.println(msg);
-        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT).show();
     }
 }

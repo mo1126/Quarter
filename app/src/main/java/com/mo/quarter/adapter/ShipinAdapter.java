@@ -7,8 +7,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.mo.quarter.R;
+import com.mo.quarter.bean.HotShipin;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,15 +23,24 @@ import java.util.Random;
 public class ShipinAdapter extends XRecyclerView.Adapter<ShipinAdapter.shipinViewHolder> {
 
     private Context context;
-    private List<String> list;
+    private List<HotShipin.DataBean>  list;
     private List<Integer> heightList;
-    public ShipinAdapter(Context context, List<String> list) {
+    public ShipinAdapter(Context context, List<HotShipin.DataBean>  list) {
         this.context = context;
         this.list = list;
         heightList=new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            heightList.add(new Random().nextInt(200)+100);
+        for (int i = 0; i < list.size(); i++) {
+            heightList.add(new Random().nextInt(200)+300);
         }
+    }
+    public void refresh(List<HotShipin.DataBean>  data){
+        list.clear();
+        list.addAll(data);
+        notifyDataSetChanged();
+    }
+    public void loadmore(List<HotShipin.DataBean>  data){
+        list.addAll(data);
+        notifyDataSetChanged();
     }
 
     @Override
@@ -41,16 +52,19 @@ public class ShipinAdapter extends XRecyclerView.Adapter<ShipinAdapter.shipinVie
 
     @Override
     public void onBindViewHolder(shipinViewHolder holder, int position) {
-
         ViewGroup.LayoutParams layoutParams = holder.iv.getLayoutParams();
-        layoutParams.height=heightList.get(position);
+        try {
+            layoutParams.height=heightList.get(position);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         holder.iv.setLayoutParams(layoutParams);
-        holder.iv.setImageResource(R.mipmap.login_other_back);
+        Glide.with(context).load(list.get(position).cover).into(holder.iv);
     }
 
     @Override
     public int getItemCount() {
-        return 20;
+        return list.size();
     }
 
     public class shipinViewHolder extends XRecyclerView.ViewHolder{

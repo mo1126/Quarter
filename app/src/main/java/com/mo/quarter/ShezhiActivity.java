@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.mo.quarter.myapp.MyApp;
 import com.mo.quarter.presenter.BasePresenter;
+import com.mo.quarter.utils.CleanMessageUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -32,6 +34,11 @@ public class ShezhiActivity extends BaseActivity {
     @Override
     public void Creat() {
         ButterKnife.bind(this);
+        try {
+            shezhiShezhiClearSize.setText(CleanMessageUtil.getTotalCacheSize(MyApp.context));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     @OnClick({R.id.shezhi_back, R.id.shezhi_updata, R.id.shezhi_yijian, R.id.shezhi_about, R.id.shezhi_clear, R.id.shezhi_tuichu})
     public void onViewClicked(View view) {
@@ -49,7 +56,12 @@ public class ShezhiActivity extends BaseActivity {
                 ShowToast("关于");
                 break;
             case R.id.shezhi_clear:
-                ShowToast("清除");
+                CleanMessageUtil.clearAllCache(MyApp.context);
+                try {
+                    shezhiShezhiClearSize.setText(CleanMessageUtil.getTotalCacheSize(MyApp.context));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 break;
             case R.id.shezhi_tuichu:
                 SharedPreferences token = getSharedPreferences("token", MODE_PRIVATE);
@@ -57,6 +69,7 @@ public class ShezhiActivity extends BaseActivity {
                 edit.clear().commit();
                 startActivity(new Intent(this,LoginActivity.class));
                 finish();
+                finishActivity(1);
                 break;
         }
     }

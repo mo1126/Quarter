@@ -30,6 +30,7 @@ public class JokesBean {
          * uid : 142
          * user : {"age":null,"fans":"null","follow":"null","icon":"https://www.zhaoapi.cn/images/142.jpg","nickname":"fghg","praiseNum":"null"}
          */
+        public boolean isopen;
 
         public Object commentNum;
         public String content;

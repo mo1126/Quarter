@@ -41,13 +41,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/duanzi_time"
-        android:layout_marginTop="@dimen/y3"
+        android:layout_marginTop="@dimen/y5"
         android:text="酒对你干髻鲨菲达环保俩世界而封闭比USA固定并发阖家安康了不法规和4ab"
         android:id="@+id/duanzi_content" />
 
 
     <ImageView
-        android:id="@+id/duanzi_open"
+        android:id="@+id/shipin_open"
         android:layout_width="@dimen/x25"
         android:layout_height="@dimen/x25"
         android:layout_alignParentEnd="true"
@@ -55,7 +55,7 @@
         android:layout_alignTop="@+id/duanzi_name"
         android:src="@mipmap/icon_open" />
     <ImageView
-        android:id="@+id/duanzi_shutdown"
+        android:id="@+id/shipin_shutdown"
         android:layout_width="@dimen/x25"
         android:layout_height="@dimen/x25"
         android:layout_alignParentEnd="true"
@@ -65,7 +65,7 @@
         android:visibility="gone"/>
 
      <LinearLayout
-         android:id="@+id/dzitem1_pinglun"
+         android:id="@+id/shipin_pinglun"
          android:layout_width="@dimen/x25"
          android:layout_height="@dimen/x35"
          android:layout_alignParentEnd="true"
@@ -75,7 +75,7 @@
          android:visibility="gone"
          >
          <com.meg7.widget.CustomShapeImageView
-             android:id="@+id/dzitem1_pinglun_iv"
+             android:id="@+id/shipin_pinglun_iv"
              android:layout_width="@dimen/x25"
              android:layout_height="@dimen/x25"
              android:src="@mipmap/pinglun"
@@ -83,7 +83,7 @@
              app:shape="circle"
               />
          <TextView
-             android:id="@+id/dzitem1_pinglun_tv"
+             android:id="@+id/shipin_pinglun_tv"
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
              android:layout_weight="1"
@@ -95,7 +95,7 @@
 
 
     <LinearLayout
-        android:id="@+id/dzitem1_fenxiang"
+        android:id="@+id/shipin_fenxiang"
         android:layout_width="@dimen/x25"
         android:layout_height="@dimen/x35"
         android:layout_alignParentEnd="true"
@@ -105,7 +105,7 @@
         android:visibility="gone"
         >
         <com.meg7.widget.CustomShapeImageView
-            android:id="@+id/dzitem1_fenxiang_iv"
+            android:id="@+id/shipin_fenxiang_iv"
             android:layout_width="@dimen/x25"
             android:layout_height="@dimen/x25"
             android:src="@mipmap/fenxiang"
@@ -113,7 +113,7 @@
             app:shape="circle"
              />
         <TextView
-            android:id="@+id/dzitem1_fenxiang_tv"
+            android:id="@+id/shipin_fenxiang_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -124,7 +124,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/dzitem1_guanzhu"
+        android:id="@+id/shipin_guanzhu"
         android:layout_width="@dimen/x25"
         android:layout_height="@dimen/x35"
         android:layout_alignParentEnd="true"
@@ -134,17 +134,17 @@
         android:visibility="gone"
         >
         <com.meg7.widget.CustomShapeImageView
-            android:id="@+id/dzitem1_guanzhu_iv"
+            android:id="@+id/shipin_guanzhu_iv"
             android:layout_width="@dimen/x25"
             android:layout_height="@dimen/x25"
-            android:layout_below="@+id/duanzi_shutdown"
-            android:layout_toEndOf="@+id/duanzi_shutdown"
-            android:layout_toRightOf="@+id/duanzi_shutdown"
+            android:layout_below="@+id/shipin_shutdown"
+            android:layout_toEndOf="@+id/shipin_shutdown"
+            android:layout_toRightOf="@+id/shipin_shutdown"
             android:padding="@dimen/x3"
             android:src="@mipmap/guanzhu"
             app:shape="circle" />
         <TextView
-            android:id="@+id/dzitem1_guanzhu_tv"
+            android:id="@+id/shipin_guanzhu_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"

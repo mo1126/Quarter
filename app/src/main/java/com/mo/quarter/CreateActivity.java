@@ -1,9 +1,7 @@
 package com.mo.quarter;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 
 import com.mo.quarter.presenter.BasePresenter;
 
@@ -37,6 +35,8 @@ public class CreateActivity extends BaseActivity {
                 break;
             case R.id.creat_shipin:
                 ShowToast("创作视频");
+                startActivity(new Intent(this,PhotographActivity.class));
+                finish();
                 break;
             case R.id.creat_duanzi:
                 ShowToast("创作段子");

@@ -18,6 +18,7 @@ import com.mo.quarter.LoginActivity;
 import com.mo.quarter.R;
 import com.mo.quarter.ShezhiActivity;
 import com.mo.quarter.bean.UserInfoBean;
+import com.mo.quarter.utils.MyIntercepter;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -82,7 +83,11 @@ public class LeftFragment extends Fragment {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.left_top:
-                startActivity(new Intent(getContext(), LoginActivity.class));
+                if(MyIntercepter.uid==null){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else{
+                    Showtoast("进入个人页面");
+                }
                 break;
             case R.id.rl_left1:
                 Showtoast("关注Activity");

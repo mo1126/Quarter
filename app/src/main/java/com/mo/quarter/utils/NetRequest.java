@@ -1,7 +1,10 @@
 package com.mo.quarter.utils;
 
+import com.mo.quarter.myapp.MyApp;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import retrofit2.CallAdapter;
@@ -40,7 +43,13 @@ public class NetRequest {
         }
 
         public NetRequest builder(){
-            OkHttpClient okHttpClient=new OkHttpClient.Builder().addInterceptor(new MyIntercepter()).build();
+            OkHttpClient okHttpClient=new OkHttpClient.Builder()
+                    .addInterceptor(new MyIntercepter())
+                    .addNetworkInterceptor(new NetWorkIntercepte())
+                    .cache(new CacheProvide(MyApp.context).provideCache())
+                    .connectTimeout(8, TimeUnit.SECONDS)
+                    .readTimeout(5, TimeUnit.SECONDS)
+                    .writeTimeout(5, TimeUnit.SECONDS).build();
             Retrofit.Builder retrofit=new Retrofit.Builder().client(okHttpClient).baseUrl("https://www.zhaoapi.cn/");
 
             if(converterFactory.size()>0&&converterFactory!=null){
