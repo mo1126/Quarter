@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+
+    <com.meg7.widget.CustomShapeImageView
+        android:id="@+id/attention_head"
+        android:layout_width="@dimen/x50"
+        android:layout_height="@dimen/x50" />
+
+    <TextView
+        android:id="@+id/attention_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/attention_head"
+        android:layout_toRightOf="@+id/attention_head"
+        android:text="name"
+        android:textSize="@dimen/x15"
+        android:paddingLeft="@dimen/x5"/>
+
+    <TextView
+        android:id="@+id/attention_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/imageView5"
+        android:layout_toStartOf="@+id/imageView5"
+        android:text="time"
+        android:textColor="@color/colorHui" />
+
+    <ImageView
+        android:layout_width="@dimen/x20"
+        android:layout_height="@dimen/x20"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/raw_1499943790"
+        android:id="@+id/imageView5" />
+</RelativeLayout>

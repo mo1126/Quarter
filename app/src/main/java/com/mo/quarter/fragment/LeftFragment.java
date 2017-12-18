@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.meg7.widget.CustomShapeImageView;
 import com.mo.quarter.LoginActivity;
+import com.mo.quarter.MyAttentionActivity;
+import com.mo.quarter.MyCenterActivity;
 import com.mo.quarter.R;
 import com.mo.quarter.ShezhiActivity;
 import com.mo.quarter.bean.UserInfoBean;
@@ -34,7 +36,6 @@ import butterknife.Unbinder;
  */
 
 public class LeftFragment extends Fragment {
-
     @BindView(R.id.left_head)
     CustomShapeImageView leftHead;
     @BindView(R.id.left_top)
@@ -53,6 +54,9 @@ public class LeftFragment extends Fragment {
     private View inflate;
     private Toast toast;
     private UserInfoBean info;
+    private String head;
+    private String nickname;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -62,6 +66,8 @@ public class LeftFragment extends Fragment {
     }
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void getinfo(UserInfoBean u){
+        head = u.data.icon;
+        nickname = u.data.nickname;
         info=u;
         Glide.with(getContext()).load(u.data.icon).into(leftHead);
         leftname.setText(u.data.nickname);
@@ -87,10 +93,14 @@ public class LeftFragment extends Fragment {
                     startActivity(new Intent(getContext(), LoginActivity.class));
                 }else{
                     Showtoast("进入个人页面");
+                    Intent intent = new Intent(getContext(), MyCenterActivity.class);
+                    intent.putExtra("head",head);
+                    intent.putExtra("name",nickname);
+                    startActivity(intent);
                 }
                 break;
             case R.id.rl_left1:
-                Showtoast("关注Activity");
+                 startActivity(new Intent(getActivity(), MyAttentionActivity.class));
                 break;
             case R.id.rl_left2:
                 Showtoast("我的收藏Activity");

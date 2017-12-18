@@ -5,7 +5,7 @@ android {
     defaultConfig {
         applicationId "com.mo.quarter"
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 22
         versionCode 101
         versionName "1.0.1"
         manifestPlaceholders = [
@@ -19,6 +19,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            useLibrary 'org.apache.http.legacy'
         }
     }
 }

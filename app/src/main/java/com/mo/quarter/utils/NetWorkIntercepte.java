@@ -17,12 +17,17 @@ public class NetWorkIntercepte implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request request = chain.request();
         Response response = chain.proceed(request);
-        Response response1 = response.newBuilder()
-                .removeHeader("Pragma")
-                .removeHeader("Cache-Control")
-                //cache for 30 days
-                .header("Cache-Control", "max-age=" + 3600 * 24 * 30)
-                .build();
-        return response1;
+        if(!NetWorkUtils.isConnected(MyApp.context)){
+            Response response1 = response.newBuilder()
+                    .removeHeader("Pragma")
+                    .removeHeader("Cache-Control")
+                    //cache for 30 days
+                    .header("Cache-Control", "max-age=" + 3600 * 24 * 30)
+                    .build();
+            return response1;
+        }else{
+            return response;
+        }
+
     }
 }

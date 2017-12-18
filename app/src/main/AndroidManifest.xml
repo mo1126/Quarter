@@ -81,7 +81,10 @@
         <activity android:name=".PhotographActivity" />
         <activity android:name=".PreviewActivity" />
         <activity android:name=".ShareVideoActivity" />
-        <activity android:name=".MyActivity"></activity>
+        <activity android:name=".MyActivity" />
+        <activity android:name=".MyCenterActivity" />
+        <activity android:name=".UserVideosActivity" />
+        <activity android:name=".MyAttentionActivity"></activity>
     </application>
 
 </manifest>

@@ -59,6 +59,8 @@ public class DuanziAdapter extends RecyclerView.Adapter<DuanziAdapter.Holder> {
 
     @Override
     public void onBindViewHolder(final Holder holder, final int position) {
+        String content = list.get(position).content;
+        System.out.println(content);
         Glide.with(context).load(list.get(position).user.icon).into(holder.head);
         holder.name.setText(list.get(position).user.nickname);
         holder.time.setText(list.get(position).createTime);

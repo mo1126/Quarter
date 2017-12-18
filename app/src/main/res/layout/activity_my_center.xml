@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mo.quarter.MyCenterActivity">
+        <com.meg7.widget.CustomShapeImageView
+            android:id="@+id/my_head"
+            android:layout_width="@dimen/x50"
+            android:layout_height="@dimen/x50"
+            android:layout_margin="@dimen/x10"
+            app:shape="circle"/>
+
+      <TextView
+        android:id="@+id/my_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/my_head"
+        android:layout_marginTop="19dp"
+        android:layout_toEndOf="@+id/my_head"
+        android:layout_toRightOf="@+id/my_head" />
+
+</RelativeLayout>
