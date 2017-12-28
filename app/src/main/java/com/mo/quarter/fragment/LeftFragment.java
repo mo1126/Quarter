@@ -17,6 +17,7 @@ import com.meg7.widget.CustomShapeImageView;
 import com.mo.quarter.LoginActivity;
 import com.mo.quarter.MyAttentionActivity;
 import com.mo.quarter.MyCenterActivity;
+import com.mo.quarter.MyCollectActivity;
 import com.mo.quarter.R;
 import com.mo.quarter.ShezhiActivity;
 import com.mo.quarter.bean.UserInfoBean;
@@ -103,7 +104,7 @@ public class LeftFragment extends Fragment {
                  startActivity(new Intent(getActivity(), MyAttentionActivity.class));
                 break;
             case R.id.rl_left2:
-                Showtoast("我的收藏Activity");
+                startActivity(new Intent(getActivity(), MyCollectActivity.class));
                 break;
             case R.id.rl_left3:
                 Showtoast("搜索好友Activity");

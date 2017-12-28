@@ -7,6 +7,8 @@ import com.mo.quarter.bean.JokesBean;
 import com.mo.quarter.bean.LoginOtherBean;
 import com.mo.quarter.bean.HotShipin;
 import com.mo.quarter.bean.MyFollowUserBean;
+import com.mo.quarter.bean.MycollectBean;
+import com.mo.quarter.bean.RandomFransBean;
 import com.mo.quarter.bean.TuijianAdBean;
 import com.mo.quarter.bean.UserInfoBean;
 import com.mo.quarter.bean.UserVideosBean;
@@ -80,7 +82,7 @@ public interface ApiService {
     @FormUrlEncoded
     Observable<UserVideosBean> getUserVideos(@Field("uid")String uid,@Field("page")String page);
 
-    @POST(" quarter/follow")
+    @POST("quarter/follow")
     @FormUrlEncoded
     Observable<ResponseBody> guanzhu(@Field("uid")String uid,@Field("followId")String followId);
 
@@ -105,4 +107,11 @@ public interface ApiService {
     Observable<ResponseBody>  pinglun(@Field("uid")String uid,@Field("wid")String wid,@Field("content") String content);
 
 
+    @POST("quarter/getFavorites")
+    @FormUrlEncoded
+    Observable<MycollectBean> getcolects(@Field("uid") String uid);
+
+
+    @POST("quarter/randomFriends")
+    Observable<RandomFransBean> getrandomfrands();
 }

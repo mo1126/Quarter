@@ -4,18 +4,13 @@ import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.dou361.ijkplayer.listener.OnShowThumbnailListener;
@@ -26,60 +21,30 @@ import com.meg7.widget.CustomShapeImageView;
 import com.mo.quarter.R;
 import com.mo.quarter.UserVideosActivity;
 import com.mo.quarter.bean.GetVideosBean;
-import com.mo.quarter.utils.MyIntercepter;
-import com.mo.quarter.utils.NetRequest;
-
-import org.json.JSONObject;
+import com.mo.quarter.bean.MycollectBean;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * Created by 莫迎华 on 2017/12/3.20:42.
  */
 
-public class TuijianAdapter extends XRecyclerView.Adapter<TuijianAdapter.TjViewHolder> {
+public class MyCollectAdapter extends XRecyclerView.Adapter<MyCollectAdapter.TjViewHolder> {
 
     private Activity context;
-    private List<GetVideosBean.DataBean> list;
-
-
-
-    public TuijianAdapter(Activity context, List<GetVideosBean.DataBean> list) {
+    private List<MycollectBean.DataBean> list;
+    public MyCollectAdapter(Activity context, List<MycollectBean.DataBean> list) {
         this.context = context;
         this.list = list;
     }
-
-    public void refresh(List<GetVideosBean.DataBean> data) {
-        list.clear();
-        list.addAll(data);
-        notifyDataSetChanged();
-    }
-
-    public void loadmore(List<GetVideosBean.DataBean> data) {
-        list.addAll(data);
-        notifyDataSetChanged();
-    }
-
     @Override
     public TjViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View inflate = View.inflate(context, R.layout.tj_rv_item, null);
         TjViewHolder holder = new TjViewHolder(inflate);
         return holder;
-    }
-
-    @Override
-    public void onDetachedFromRecyclerView(RecyclerView recyclerView) {
-        super.onDetachedFromRecyclerView(recyclerView);
     }
 
     @Override
@@ -135,14 +100,12 @@ public class TuijianAdapter extends XRecyclerView.Adapter<TuijianAdapter.TjViewH
             @Override
             public void onClick(View v) {
                 iclick.dianzan(String.valueOf(list.get(position).wid));
-                holder.ivImg1.setImageResource(R.mipmap.xin22);
             }
         });
         holder.ivImg2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
              iclick.shoucang(String.valueOf(list.get(position).wid));
-                holder.ivImg2.setImageResource(R.mipmap.xing22);
             }
         });
         holder.ivImg3.setOnClickListener(new View.OnClickListener() {
@@ -188,8 +151,6 @@ public class TuijianAdapter extends XRecyclerView.Adapter<TuijianAdapter.TjViewH
         player.hideFullscreen(true);
         player.setForbidDoulbeUp(true);
         player.hideFullscreen(true);
-
-
     }
 
     private void open(TjViewHolder holder) {

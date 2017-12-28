@@ -88,9 +88,7 @@ public class UserVideoModel {
                 .subscribe(new Observer<ResponseBody>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-
                     }
-
                     @Override
                     public void onNext(ResponseBody responseBody) {
                         try {

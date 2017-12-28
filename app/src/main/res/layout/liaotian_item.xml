@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:layout_margin="@dimen/x10">
+    <com.meg7.widget.CustomShapeImageView
+        android:id="@+id/liaotian_head"
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x40" />
+
+    <TextView
+        android:id="@+id/ltitem_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/liaotian_head"
+        android:paddingLeft="@dimen/x10"
+        android:text="content"
+        android:textSize="15sp"
+         />
+</RelativeLayout>

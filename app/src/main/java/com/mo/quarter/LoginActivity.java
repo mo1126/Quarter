@@ -12,6 +12,8 @@ import com.amap.api.location.AMapLocation;
 import com.amap.api.location.AMapLocationClient;
 import com.amap.api.location.AMapLocationClientOption;
 import com.amap.api.location.AMapLocationListener;
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
 import com.mo.quarter.presenter.BasePresenter;
 import com.umeng.analytics.MobclickAgent;
 
@@ -42,7 +44,26 @@ public class LoginActivity extends BaseActivity {
         ButterKnife.bind(this);
         SharedPreferences token = getSharedPreferences("token", MODE_PRIVATE);
         String uid = token.getString("uid", null);
-        if(uid!=null){
+        String mobile = token.getString("mobile", null);
+        String pwd = token.getString("pwd", null);
+        if(uid!=null&&mobile!=null&&pwd!=null){
+            EMClient.getInstance().login(mobile,pwd,new EMCallBack() {//回调
+                @Override
+                public void onSuccess() {
+                    EMClient.getInstance().groupManager().loadAllGroups();
+                    EMClient.getInstance().chatManager().loadAllConversations();
+                    Log.d("main", "登录聊天服务器成功！");
+                    EMClient.getInstance().chatManager().loadAllConversations();
+                    EMClient.getInstance().groupManager().loadAllGroups();
+                }
+                @Override
+                public void onProgress(int progress, String status) {
+                }
+                @Override
+                public void onError(int code, String message) {
+                    Log.d("main", "登录聊天服务器失败！");
+                }
+            });
             startActivity(new Intent(this,HomeActivity.class));
             finish();
         }

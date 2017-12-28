@@ -15,6 +15,7 @@ import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.TextView;
 
+import com.hyphenate.chat.EMClient;
 import com.mo.quarter.bean.GetVersionBean;
 import com.mo.quarter.myapp.MyApp;
 import com.mo.quarter.presenter.BasePresenter;
@@ -102,6 +103,7 @@ public class ShezhiActivity extends BaseActivity<ShezhiPresenter> implements She
                 SharedPreferences token = getSharedPreferences("token", MODE_PRIVATE);
                 SharedPreferences.Editor edit = token.edit();
                 edit.clear().commit();
+                EMClient.getInstance().logout(true);
                 startActivity(new Intent(this,LoginActivity.class));
                 finish();
                 finishActivity(1);

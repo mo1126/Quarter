@@ -3,6 +3,7 @@ package com.mo.quarter;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -10,6 +11,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.hyphenate.EMCallBack;
+import com.hyphenate.chat.EMClient;
 import com.mo.quarter.bean.LoginOtherBean;
 import com.mo.quarter.presenter.BasePresenter;
 import com.mo.quarter.presenter.LoginOtherPresenter;
@@ -65,6 +68,23 @@ public class LoginOtherActivity extends BaseActivity<LoginOtherPresenter> implem
                 break;
             case R.id.other_login:
                 presenter.LoginOther(otherName.getText().toString(),otherPwd.getText().toString());
+                EMClient.getInstance().login(otherName.getText().toString(),otherPwd.getText().toString(),new EMCallBack() {//回调
+                    @Override
+                    public void onSuccess() {
+                        EMClient.getInstance().groupManager().loadAllGroups();
+                        EMClient.getInstance().chatManager().loadAllConversations();
+                        Log.d("main", "登录聊天服务器成功！");
+                        EMClient.getInstance().chatManager().loadAllConversations();
+                        EMClient.getInstance().groupManager().loadAllGroups();
+                    }
+                    @Override
+                    public void onProgress(int progress, String status) {
+                    }
+                    @Override
+                    public void onError(int code, String message) {
+                        Log.d("main", "登录聊天服务器失败！");
+                    }
+                });
                 ShowToast("登录");
                 break;
             case R.id.other_wangji:
@@ -91,6 +111,8 @@ public class LoginOtherActivity extends BaseActivity<LoginOtherPresenter> implem
         SharedPreferences.Editor edit = token.edit();
         edit.putString("token",loginOtherBean.data.token);
         edit.putString("uid", String.valueOf(loginOtherBean.data.uid));
+        edit.putString("mobile",otherName.getText().toString());
+        edit.putString("pwd",otherPwd.getText().toString());
         edit.commit();
         startActivity(new Intent(this, HomeActivity.class));
         System.out.println(loginOtherBean.data.token);
